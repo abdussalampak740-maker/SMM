@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+  
+  --color-primary: #630ed4;
+  --color-secondary: #2563EB;
+  --color-background: #f8f9ff;
+  --color-on-surface: #121c2a;
+  --color-on-surface-variant: #4a4455;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #ccc3d8;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+.primary-gradient {
+  @apply bg-gradient-to-br from-primary to-secondary;
+}
+
+.primary-gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.editorial-shadow {
+  box-shadow: 0 32px 32px rgba(99, 14, 212, 0.06);
+}
+
+.editorial-content {
+  @apply max-w-none;
+}
+
+.editorial-content h1 {
+  @apply text-3xl font-extrabold text-on-surface mb-4;
+}
+
+.editorial-content p {
+  @apply text-base text-on-surface-variant leading-relaxed mb-4;
+}
+
+.editorial-content ul {
+  @apply list-disc pl-5 mb-4 text-on-surface-variant;
+}
